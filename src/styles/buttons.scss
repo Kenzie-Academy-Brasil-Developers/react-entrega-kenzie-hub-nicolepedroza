@@ -1,0 +1,71 @@
+.button1{
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26.394px;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-gray0);
+    background-color: var(--color-primary);
+    border-radius: 4px;
+    
+    &:hover{
+        background-color: var(--color-primaryFocus);
+    }
+}
+
+.button2{
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26.394px;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-gray0);
+    background-color: var(--color-grey1);
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+
+}
+
+.button3{
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 28.425px;
+    color: var(--color-grey0);
+    background-color: var(--color-grey3);
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.button4{
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26.394px;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-grey0);
+    background-color: var(--color-primaryNegative);
+    border-radius: 4px;
+
+    &:hover{
+        background-color: var(--color-primary);
+    }
+}
