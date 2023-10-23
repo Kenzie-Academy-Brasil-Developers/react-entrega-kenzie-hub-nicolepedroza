@@ -2,10 +2,10 @@ import { set, useForm } from "react-hook-form"
 import { Input } from "../../componentes/Input"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { registerFormSchema } from "./registerFormschema"
-import { api } from "../../api/axios"
 import { Link ,useNavigate } from "react-router-dom"
-import { toast } from "react-toastify"
 import styles from "./style.module.scss"
+import { useContext } from "react"
+import { UserContext } from "../../providers/UserContext"
 
 
 export const Register = () => {
@@ -14,19 +14,7 @@ export const Register = () => {
         resolver: zodResolver(registerFormSchema),
     })
 
-    const navigate = useNavigate()
-
-    const submit = async (payload) => {
-
-        try {
-            await api.post("/users", payload)
-            navigate("/")
-            toast.success("Conta criada com sucesso!")
-        } catch (error) {
-            console.log(error)
-            toast.error("Ops! Algo deu errado!")
-        }
-    }
+    const {submitRegister} = useContext(UserContext)
 
     return(
         <>
@@ -39,7 +27,7 @@ export const Register = () => {
                 </div>
 
             <div className={styles.divForm}>
-            <form className={styles.form} onSubmit={handleSubmit(submit)}>
+            <form className={styles.form} onSubmit={handleSubmit(submitRegister)}>
                 <h3 className="title1">Crie sua conta</h3>
                 <p className="title5">Rapido e gratís, vamos nessa</p>
 

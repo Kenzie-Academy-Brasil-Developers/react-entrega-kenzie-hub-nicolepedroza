@@ -2,32 +2,19 @@ import { useForm } from "react-hook-form"
 import {Input} from "../../componentes/Input"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { loginFormSchema } from "./loginFormschema"
-import { Link, useNavigate } from "react-router-dom"
-import { api } from "../../api/axios"
-import { toast } from "react-toastify"
+import { Link } from "react-router-dom"
 import styles from "./style.module.scss"
 import {MdVisibility, MdVisibilityOff} from "react-icons/md"
-import { useState } from "react"
-export const Login = ({setUser}) => {
+import { useContext, useState } from "react"
+import { UserContext } from "../../providers/UserContext"
+export const Login = () => {
 
     const {register, handleSubmit, formState: {errors}} = useForm({
         resolver: zodResolver(loginFormSchema),
     })
+    const {submitLogin} = useContext(UserContext)
     
     const [isHidden, setIsHidden] = useState(true)
-    const navigate = useNavigate()
-
-    const submit = async (payload) => {
-        try {
-           const {data} = await api.post("/sessions", payload) 
-           localStorage.setItem("@token", data.token)
-           navigate("/dashboard")
-           setUser(data.user)
-        } catch (error) {
-            console.log(error)
-            toast.error("Algo deu errado!")
-        }
-    }
     return(
         <>
         <div className={styles.container}>
@@ -35,7 +22,7 @@ export const Login = ({setUser}) => {
             <h1>Kenzie Hub</h1>
         </header>
         <div className={styles.divForm}>
-            <form className={styles.form} onSubmit={handleSubmit(submit)}>
+            <form className={styles.form} onSubmit={handleSubmit(submitLogin)}>
                 <h3 className="title7">Login</h3>
                 <Input
                 label="Email"

@@ -17,7 +17,7 @@
         font-family: var(--font-primary);
     }
     a{
-        width: 10%;
+        width: 7%;
     }
 
 }
@@ -35,4 +35,23 @@
     gap: 2rem;
     flex-wrap: wrap;
     align-content: center;
+}
+
+@media (max-width: 1000px){
+    .header{
+        justify-content: space-between;
+
+        a{
+            width: 20%;
+        }
+    }
+    .divContent{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-content: baseline;
+    }  
+    .divFooter{
+        align-content: baseline;
+    } 
 }

@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom"
 import styles from "./style.module.scss"
-export const Dashboard = ({user, userLogout}) => {
-    console.log(user)
+import { useContext } from "react"
+import { UserContext } from "../../providers/UserContext"
+export const Dashboard = () => {
+
+    const {user, userLogout} = useContext(UserContext)
     return(
         <><div className={styles.containerDashboard}>
             <header className={styles.header}>

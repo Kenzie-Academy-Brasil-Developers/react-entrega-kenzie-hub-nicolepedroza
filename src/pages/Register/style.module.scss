@@ -51,10 +51,19 @@
     gap: 0.7rem;
 }
 
-@media (max-width: 1000px){
+@media (max-width: 1500px){
     .divHeader{
         display: flex;
         justify-content: space-around;
-        width: 100%;
+        width: 40%;
     }   
 }
+
+@media (max-width: 800px){
+    .divHeader{
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+    }   
+}
+
