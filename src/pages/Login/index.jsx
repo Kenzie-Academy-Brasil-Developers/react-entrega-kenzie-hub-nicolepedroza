@@ -40,7 +40,7 @@ export const Login = () => {
                 {...register("password")}
                 errors={errors.password}
                 style={{position: "relative",
-            color:"#F8F9FA"}}
+                color:"#F8F9FA"}}
                 />
                 <button onClick={() => setIsHidden(!isHidden)}
                 style={{

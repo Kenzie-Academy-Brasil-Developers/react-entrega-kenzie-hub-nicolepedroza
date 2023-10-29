@@ -4,7 +4,7 @@
     min-height: 100vh;
     background-color: var( --color-grey4);
     padding: 2rem;
-    gap: 4rem;
+    gap: 6rem;
 
 }
 .header{
@@ -24,12 +24,15 @@
 
 .divContent{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     align-content: center;
+    width: 100%;
+    gap: 12rem;
+
 }
 .divFooter{
-    width: 77%;
+    width: 78%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
