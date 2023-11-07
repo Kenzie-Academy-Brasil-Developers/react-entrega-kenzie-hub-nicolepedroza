@@ -8,6 +8,7 @@ export const UserContext = createContext({})
 export const UserProvider = ({children}) => {
     const [user, setUser] = useState("")
     const [loading, setLoading] = useState(false)
+    const [technologies, setTechnologies] = useState([])
 
     useEffect(() => {
         const token = localStorage.getItem("@token")
@@ -20,6 +21,9 @@ export const UserProvider = ({children}) => {
                     }
                 })
                 setUser(data)
+                if(data.techs){
+                    setTechnologies(data.techs)
+                }
                 navigate("/dashboard")
             }catch(error){
                 console.log(error)
@@ -42,8 +46,11 @@ export const UserProvider = ({children}) => {
         try {
            const {data} = await api.post("/sessions", payload) 
            localStorage.setItem("@token", data.token)
-           navigate("/dashboard")
            setUser(data.user)
+           if(data.user.techs){
+               setTechnologies(data.user.techs)
+            }
+            navigate("/dashboard")
         } catch (error) {
             console.log(error)
             toast.error("Algo deu errado!")
@@ -61,7 +68,7 @@ export const UserProvider = ({children}) => {
             toast.error("Ops! Algo deu errado!")
         }
     }
-    return <UserContext.Provider value={{loading, user, userLogout, submitLogin, submitRegister}}>
+    return <UserContext.Provider value={{loading, user, userLogout, submitLogin, submitRegister, technologies, setTechnologies}}>
             {children}
     </UserContext.Provider>
 }

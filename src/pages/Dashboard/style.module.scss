@@ -31,14 +31,7 @@
     gap: 12rem;
 
 }
-.divFooter{
-    width: 78%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    flex-wrap: wrap;
-    align-content: center;
-}
+
 
 @media (max-width: 1000px){
     .header{
@@ -54,7 +47,5 @@
         gap: 1rem;
         align-content: baseline;
     }  
-    .divFooter{
-        align-content: baseline;
-    } 
+
 }

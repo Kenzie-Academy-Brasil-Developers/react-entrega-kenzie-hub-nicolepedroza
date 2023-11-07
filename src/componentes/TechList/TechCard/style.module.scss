@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--color-grey4);
+
+    div{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    }
+
+    button{
+        color: white;
+    }
+}
